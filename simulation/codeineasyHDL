@@ -1,0 +1,22 @@
+//Code for generating combinations of appliances in easyHDL
+
+REM *SCRIPT GENERATOR SINEWAVE
+
+REM Define the output as a voltage
+NODE IOUT(Current)
+
+REM Define waveform parameters
+FLOAT FREQ=50
+FLOAT OMEGA=2*PI*FREQ
+FLOAT AMP1=
+FLOAT AMP2=
+FLOAT PHI1=0
+FLOAT PHI2=0
+
+REM Output is a simple function of time
+IOUT=AMP1*SIN(OMEGA*REALTIME+PHI1)+AMP2*SIN(OMEGA*REALTIME+PHI2)
+
+REM Restrict the timestep
+BOUNDSTEP(0.05/FREQ)
+
+REM *ENDSCRIPT
